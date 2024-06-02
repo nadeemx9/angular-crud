@@ -11,7 +11,6 @@ export class ViewDataComponent {
   constructor(private service: MyServicesService) {
     this.service.getData().subscribe((resp: any) => {
       this.data = resp
-      console.log(this.data)
     },
       error => {
         console.log(error)

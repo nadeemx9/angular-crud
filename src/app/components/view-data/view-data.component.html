@@ -47,7 +47,8 @@
                 <td>{{item?.location}}</td>
                 <td><button type="button" class="btn btn-outline-info"
                         [routerLink]="'/edit-data/'+item?.id">Edit</button></td>
-                <td><button type="button" class="btn btn-outline-danger">Delete</button></td>
+                <td><button type="button" class="btn btn-outline-danger"
+                        [routerLink]="'/delete-data/'+item?.id">Delete</button></td>
             </tr>
         </tbody>
     </table>

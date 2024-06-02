@@ -7,16 +7,22 @@ import { ViewDataComponent } from './components/view-data/view-data.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { EditDataComponent } from './components/edit-data/edit-data.component'
+import { ReactiveFormsModule } from '@angular/forms';
+import { PostDataComponent } from './components/post-data/post-data.component';
+import { DeleteDataComponent } from './components/delete-data/delete-data.component';
 @NgModule({
   declarations: [
     AppComponent,
     ViewDataComponent,
-    EditDataComponent
+    EditDataComponent,
+    PostDataComponent,
+    DeleteDataComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [RouterModule],
   bootstrap: [AppComponent]
