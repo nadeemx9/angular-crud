@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { tick } from '@angular/core/testing';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MyServicesService } from 'src/app/services/my-services.service';
 
@@ -9,12 +9,12 @@ import { MyServicesService } from 'src/app/services/my-services.service';
   templateUrl: './edit-data.component.html',
   styleUrls: ['./edit-data.component.scss']
 })
-export class EditDataComponent implements OnInit {
+export class EditDataComponent {
 
   id: number = 0
   data: any = {}
   formGroup = this.fb.group({
-    id: [''],
+    id: ['', Validators],
     name: [''],
     email: [''],
     location: ['']
@@ -24,8 +24,7 @@ export class EditDataComponent implements OnInit {
     private fb: FormBuilder,
     private route: Router) {
     this.activatedRoute.params.subscribe(params => {
-      const id = params['id']
-      this.id = id
+      this.id = params['id']
     })
 
     this.service.getById(this.id).subscribe((data: any) => {
@@ -35,9 +34,6 @@ export class EditDataComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
-
-  }
   updateData() {
     this.service.updateData(this.formGroup.value).subscribe((resp: any) => {
       this.route.navigate([''])
