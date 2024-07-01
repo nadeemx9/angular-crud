@@ -3,7 +3,7 @@
     <form [formGroup]="formGroup" (ngSubmit)="updateData()">
         <div class="mb-3 col-3">
             <label for="id" class="form-label">ID</label>
-            <input type="text" class="form-control" id="id" aria-describedby="emailHelp" formControlName="id">
+            <input type="text" class="form-control" id="id" aria-describedby="emailHelp" formControlName="id" readonly>
         </div>
         <div class="mb-3 col-3">
             <label for="name" class="form-label">Name</label>

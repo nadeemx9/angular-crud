@@ -4,6 +4,7 @@ import { ViewDataComponent } from './components/view-data/view-data.component';
 import { EditDataComponent } from './components/edit-data/edit-data.component';
 import { PostDataComponent } from './components/post-data/post-data.component';
 import { DeleteDataComponent } from './components/delete-data/delete-data.component';
+import { LanguageValidatorComponent } from './components/language-validator/language-validator.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'delete-data/:id',
     component: DeleteDataComponent
+  },
+  {
+    path: 'language-validation',
+    component: LanguageValidatorComponent
   }
 ];
 

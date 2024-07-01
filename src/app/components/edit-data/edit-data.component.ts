@@ -14,7 +14,7 @@ export class EditDataComponent {
   id: number = 0
   data: any = {}
   formGroup = this.fb.group({
-    id: ['', Validators],
+    id: [''],
     name: [''],
     email: [''],
     location: ['']
@@ -28,8 +28,7 @@ export class EditDataComponent {
     })
 
     this.service.getById(this.id).subscribe((data: any) => {
-      this.data = data
-      this.formGroup.setValue(this.data);
+      this.formGroup.setValue(data);
     })
 
   }

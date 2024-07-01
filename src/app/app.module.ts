@@ -10,13 +10,17 @@ import { EditDataComponent } from './components/edit-data/edit-data.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { PostDataComponent } from './components/post-data/post-data.component';
 import { DeleteDataComponent } from './components/delete-data/delete-data.component';
+import { LangValidatorDirective } from './directives/lang-validator.directive';
+import { LanguageValidatorComponent } from './components/language-validator/language-validator.component';
 @NgModule({
   declarations: [
     AppComponent,
     ViewDataComponent,
     EditDataComponent,
     PostDataComponent,
-    DeleteDataComponent
+    DeleteDataComponent,
+    LangValidatorDirective,
+    LanguageValidatorComponent
   ],
   imports: [
     BrowserModule,

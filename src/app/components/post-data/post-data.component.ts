@@ -15,7 +15,7 @@ export class PostDataComponent {
     private route: Router) { }
 
   formGroup = this.fb.group({
-    id: ['', [Validators.required]],
+    // id: ['', [Validators.required]],
     name: ['', [Validators.required]],
     email: ['', [Validators.required]],
     location: ['', [Validators.required]]

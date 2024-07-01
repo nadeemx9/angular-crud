@@ -2,26 +2,17 @@
 
 <div class="container mt-5">
     <form [formGroup]="formGroup" (ngSubmit)="postData()">
-        <div class="mb-3 col-3">
+        <!-- <div class="mb-3 col-3">
             <label for="id" class="form-label">ID</label>
             <input type="text" class="form-control" id="id" aria-describedby="emailHelp" formControlName="id">
-        </div>
+        </div> -->
         <div class="mb-3 col-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" formControlName="name" aria-describedby="emailHelp">
-            <div *ngIf="formGroup.get('name')?.invalid && (formGroup.get('name')?.dirty || formGroup.get('name')?.touched)"
-                class="alert alert-danger">
-
-                <div *ngIf="formGroup.get('name')?.errors?.['required']">
-                    Name is required.
-                </div>
-                <div *ngIf="formGroup.get('name')?.errors?.['minlength']">
-                    Name must be at least 4 characters long.
-                </div>
-                <div *ngIf="formGroup.get('name')?.errors?.['forbiddenName']">
-                    Name cannot be Bob.
-                </div>
-            </div>
+            <input type="text" class="form-control" id="name" formControlName="name" aria-describedby="emailHelp" appLanguageValidator>
+            <div *ngIf="formGroup.get('name') && (formGroup.get('name')?.dirty || formGroup.get('name')?.touched)">
+                <div *ngIf="formGroup.get('name')?.errors?.['required']" class="text-danger">Name is required.</div>
+                <div *ngIf="formGroup.get('name')?.errors?.['invalidLanguage']" class="text-danger">Name contains invalid characters.</div>
+              </div>
         </div>
         <div class="mb-3 col-3">
             <label for="email" class="form-label">Email</label>

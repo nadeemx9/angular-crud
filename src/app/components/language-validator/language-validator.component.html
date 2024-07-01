@@ -1,0 +1,42 @@
+<h1 class="text-center">LANGUAGE VALIDATOR</h1>
+
+<div class="container mt-5">
+    <form [formGroup]="formGroup">
+        <div class="mb-3 col-3">
+            <label for="english" class="form-label">English</label>
+            <input type="text" class="form-control" id="english" formControlName="english" aria-describedby="emailHelp"
+                appLanguageValidator>
+            <div
+                *ngIf="formGroup.get('english') && (formGroup.get('english')?.dirty || formGroup.get('english')?.touched)">
+                <div *ngIf="formGroup.get('english')?.errors?.['required']" class="text-danger">English text is
+                    required.</div>
+                <div *ngIf="formGroup.get('english')?.errors?.['invalidLanguage']" class="text-danger">Text contains
+                    invalid characters.</div>
+            </div>
+        </div>
+        <div class="mb-3 col-3">
+            <label for="hindi" class="form-label">Hindi</label>
+            <input type="text" class="form-control" id="hindi" formControlName="hindi" aria-describedby="emailHelp"
+                appLanguageValidator>
+            <div *ngIf="formGroup.get('hindi') && (formGroup.get('hindi')?.dirty || formGroup.get('hindi')?.touched)">
+                <div *ngIf="formGroup.get('hindi')?.errors?.['required']" class="text-danger">Hindi text is required.
+                </div>
+                <div *ngIf="formGroup.get('hindi')?.errors?.['invalidLanguage']" class="text-danger">Text contains
+                    invalid characters.</div>
+            </div>
+        </div>
+        <div class="mb-3 col-3">
+            <label for="arabic" class="form-label">Arabic</label>
+            <input type="text" class="form-control" id="arabic" formControlName="arabic" aria-describedby="emailHelp"
+                appLanguageValidator>
+            <div
+                *ngIf="formGroup.get('arabic') && (formGroup.get('arabic')?.dirty || formGroup.get('arabic')?.touched)">
+                <div *ngIf="formGroup.get('arabic')?.errors?.['required']" class="text-danger">Arabic text is required.
+                </div>
+                <div *ngIf="formGroup.get('arabic')?.errors?.['invalidLanguage']" class="text-danger">Text contains
+                    invalid characters.</div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="formGroup.invalid">Update</button>
+    </form>
+</div>
